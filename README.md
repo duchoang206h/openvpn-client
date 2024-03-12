@@ -45,7 +45,7 @@ container) when you launch the service in its container.
 ## Starting an OpenVPN client instance
 
     sudo cp /path/to/vpn.crt /some/path/vpn-ca.crt
-    sudo docker run -it --cap-add=NET_ADMIN --device /dev/net/tun --name vpn \
+    sudo docker run -it --cap-add=NET_ADMIN --device /dev/net/tun --dns=8.8.8.8 --name vpn \
                 -v /some/path:/vpn -d dperson/openvpn-client \
                 -v 'vpn.server.name;username;password'
     sudo docker restart vpn
